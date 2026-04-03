@@ -1,114 +1,140 @@
-# Lesson 1.6 – NumPy for Beginners (Agenda)
+# 📚 Lesson 1.6: Introduction to NumPy
 
-Total Duration: 3 hours  
-Environment: Google Colab or VS Code Jupyter
+## Session Overview
 
----
+| | |
+|---|---|
+| **Duration** | 3 hours |
+| **Format** | Flipped Classroom + Guided Coding in Jupyter |
+| **Tools** | Google Colab (recommended) or VS Code + `pds` conda environment |
+| **Notebook** | `notebooks/numpy_lesson.ipynb` |
 
-## Welcome & Outcomes
+## Agenda
 
-- Introduce the session and goals:
-  - Understand what NumPy is and why it matters
-  - Create and inspect basic arrays
-  - See how NumPy compares to Python lists on performance
-  - Learn about array indexing, slicing, and broadcasting
-  - Apply universal functions and perform linear algebra operations
+| Time | Part | Topic |
+|------|------|-------|
+| 0:00 – 0:10 | Welcome | Session goals & setup check |
+| 0:10 – 1:00 | Parts 1–2 | Performance Benchmark + The ndarray |
+| 1:00 – 1:05 | Break | — |
+| 1:05 – 1:55 | Parts 3–4 | Arithmetic & Broadcasting + Indexing and Slicing |
+| 1:55 – 2:00 | Break | — |
+| 2:00 – 2:55 | Parts 6–7 | ufuncs & Methods + Linear Algebra |
+| 2:55 – 3:00 | Wrap-Up | Key Takeaways |
 
----
+## 🎯 Learning Objectives
 
-## Part 1: Performance Benchmark
+By the end of this session, you will be able to:
 
-Notebook: **"Part 1: Performance Benchmark"** section and code cell.
-
-- Walk through:
-  - `import numpy as np`
-  - Creating a 1,000,000‑element NumPy array and Python list
-  - `%timeit` comparison: NumPy vectorized multiply vs list comprehension
-- Quick learner activity:
-  - Learners run the timing cell and briefly describe what they observe
-
----
-
-## Part 2: The ndarray (N-dimensional array)
-
-Notebook: **"Part 2: The ndarray"** section.
-
-- Demonstrate:
-  - Creating arrays from Python sequences
-  - Array attributes: `shape`, `dtype`, `ndim`
-  - Data types and casting using `astype`
-- **[EXERCISE 1: Creation & Casting]**
-  - Create a 3x4 array of all ones using `np.ones()`
-  - Cast this array to `float32`
-  - Create an array of strings representing numbers and cast to `float`
+1. Create NumPy arrays from Python sequences and inspect key attributes (`shape`, `dtype`, `ndim`).
+2. Apply indexing, slicing, and Boolean masking to filter and extract data from arrays.
+3. Use broadcasting to perform efficient element-wise arithmetic between arrays of different shapes.
+4. Execute statistical aggregations and basic linear algebra operations using NumPy.
 
 ---
 
-## Part 3: Arithmetic & Broadcasting
+## Before You Start
 
-Notebook: **"Part 3: Arithmetic & Broadcasting"** section.
+**Have you completed the pre-class reading?**
+- ✓ Understand what NumPy is and why it matters
+- ✓ Jupyter or Colab environment is set up and working
 
-- Demonstrate:
-  - Element-wise arithmetic operations (addition, multiplication, etc.)
-  - Broadcasting: how scalars and arrays of different shapes work together
-  - Examples: `arr * arr`, `1 / arr`
-- Discussion:
-  - How broadcasting makes code cleaner and more efficient
+Open the notebook: `notebooks/numpy_lesson.ipynb`
 
----
-
-## Part 4: Indexing and Slicing
-
-Notebook: **"Part 4: Indexing and Slicing"** section.
-
-- Demonstrate:
-  - 1D array indexing (similar to Python lists)
-  - 2D array indexing with `[row, col]` syntax
-  - Array slices are views (not copies)
-  - Modifying a slice affects the original array
-- **[EXERCISE 3: Complex Filtering]**
-  - Select all scores where the name is NOT 'Bob'
-  - Select scores for 'Bob' or 'Will' using the `|` operator
-  - Find all scores less than 80 and set them to 0
+Run the first cell (`import numpy as np` and print the version) to confirm your environment is ready.
 
 ---
 
-## Part 6: Universal Functions (ufuncs) and Methods
+## 🏃 Part 1: Performance Benchmark
 
-Notebook: **"Part 6: Universal Functions (ufuncs) and Methods"** section.
+Notebook section: **"Part 1: Performance Benchmark"**
 
-- Demonstrate:
-  - Unary ufuncs: `sqrt`, `exp`
-  - Binary ufuncs: `add`, `maximum`
-  - Statistical methods: `mean`, `sum`, `std`
-  - Computing statistics along axes (axis=0, axis=1)
-- Discussion:
-  - When to use ufuncs vs loops for performance
+- Run the `%timeit` comparison between a NumPy vectorized multiply and a Python list comprehension on 1,000,000 elements.
+- Observe the timing results.
+
+> **Quick activity:** Run the timing cell and describe what you observe. How much faster is NumPy? What does this mean for data science at scale?
 
 ---
 
-## Part 7: Linear Algebra
+## 🏃 Part 2: The ndarray (N-dimensional array)
 
-Notebook: **"Part 7: Linear Algebra"** section.
+Notebook section: **"Part 2: The ndarray"**
 
-- Demonstrate:
-  - Element-wise multiplication with `*` vs matrix multiplication
-  - Matrix multiplication with `.dot()` or `@` operator
-  - Example: multiplying two matrices
-- **[EXERCISE 4: Reshaping & Statistics]**
-  - Create an array of 15 integers using `arange(15)` and reshape it to `(3, 5)`
-  - Calculate the average value of each row
-  - Use `np.unique()` to find distinct elements
-  - Transpose the reshaped array using `.T` and check the new shape
+- Creating arrays from Python sequences
+- Array attributes: `shape`, `dtype`, `ndim`
+- Data types and casting using `astype`
+
+### 🛠️ Exercise 1: Creation & Casting
+
+- Create a 3×4 array of all ones using `np.ones()`
+- Cast this array to `float32`
+- Create an array of strings representing numbers and cast to `float`
 
 ---
 
-## Wrap-up & Next Steps
+## 🏃 Part 3: Arithmetic & Broadcasting
 
-- Review key takeaways:
-  - NumPy's performance advantages
-  - Creating and manipulating ndarrays
-  - Broadcasting and vectorization
-  - Linear algebra basics
-- Preview next lesson topics
-- Q&A
+Notebook section: **"Part 3: Arithmetic & Broadcasting"**
+
+- Element-wise arithmetic operations (addition, multiplication, etc.)
+- Broadcasting: how scalars and arrays of different shapes work together
+- Examples: `arr * arr`, `1 / arr`
+
+> **Discussion:** How does broadcasting make code cleaner and more efficient?
+
+---
+
+## 🏃 Part 4: Indexing and Slicing
+
+Notebook section: **"Part 4: Indexing and Slicing"**
+
+- 1D array indexing (similar to Python lists)
+- 2D array indexing with `[row, col]` syntax
+- Array slices are **views**, not copies — modifying a slice affects the original array
+
+### 🛠️ Exercise 3: Complex Filtering
+
+- Select all scores where the name is NOT 'Bob'
+- Select scores for 'Bob' or 'Will' using the `|` operator
+- Find all scores less than 80 and set them to 0
+
+---
+
+## 🏃 Part 6: Universal Functions (ufuncs) and Methods
+
+Notebook section: **"Part 6: Universal Functions (ufuncs) and Methods"**
+
+- Unary ufuncs: `sqrt`, `exp`
+- Binary ufuncs: `add`, `maximum`
+- Statistical methods: `mean`, `sum`, `std`
+- Computing statistics along axes (`axis=0`, `axis=1`)
+
+> **Discussion:** When should you use ufuncs vs. loops for performance?
+
+---
+
+## 🏃 Part 7: Linear Algebra
+
+Notebook section: **"Part 7: Linear Algebra"**
+
+- Element-wise multiplication with `*` vs. matrix multiplication with `.dot()` or `@` operator
+- Example: multiplying two matrices
+
+### 🛠️ Exercise 4: Reshaping & Statistics
+
+- Create an array of 15 integers using `arange(15)` and reshape it to `(3, 5)`
+- Calculate the average value of each row
+- Use `np.unique()` to find distinct elements
+- Transpose the reshaped array using `.T` and check the new shape
+
+---
+
+## 🎯 Wrap-Up
+
+**Key Takeaways:**
+1. NumPy arrays are the foundation — Pandas, scikit-learn, and TensorFlow all build on NumPy's ndarray.
+2. Slices are **views**, not copies — use `.copy()` when you need independence from the source array.
+3. `@` for matrix multiplication, `*` for element-wise — getting these confused causes silent wrong results.
+
+**Next Steps:**
+- Complete the [Assignment](./assignment.md) — 7 NumPy practice exercises covering arrays, masking, broadcasting, and linear algebra.
+- Next lesson: Lesson 1.7 introduces Pandas — a higher-level library built on NumPy that adds labelled indexing, mixed data types, and table-like operations.
